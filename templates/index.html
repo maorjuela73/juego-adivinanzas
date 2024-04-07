@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Juego de Adivinanzas</title>
+    <title>Adivina el Número</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Adivina el número</h1>
-    <p>Intenta adivinar el número que estoy pensando, entre 1 y 100.</p>
+    <h2>¡Bienvenido al Juego!</h2>
+    <p>
+        ¿Podrás adivinar el número misterioso?
+    </p>
+    <p>
+        Intenta adivinar el número que estoy pensando, entre 1 y 100. 
+        ¡Usa tus dotes de adivinación y pon a prueba tu suerte!
+    </p>
+
+    <h2>Instrucciones</h2>
+    <ul>
+        <li>Ingresa tu conjetura en el campo abajo y presiona "Enviar" para ver si acertaste</li>
+        <li>Si adivinas el número, ¡ganarás!</li>
+        <li>Si no adivinas el número, te daré una pista para que sigas intentando.</li>
+    </ul>
 
     {% if mensaje %}
         <p>{{ mensaje }}</p>
     {% endif %}
 
+    <h2>Tu conjetura</h2>
+
     <form method="post">
-        Tu conjetura: <input type="number" name="conjetura">
-        <button type="submit">Enviar</button>
+        <input type="number" class="form-control form-control-lg" name="conjetura" placeholder="Escribe un número entre 1 y 100">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
     </form>
+    <script>
+        window.onload = function() {
+            var form = document.querySelector('form');
+            var input = document.querySelector('input[name="conjetura"]');
+
+            form.addEventListener('submit', function(event) {
+                if(input.value.trim() === '') {
+                    event.preventDefault();
+                    alert('Por favor, escribe un número entre 1 y 100');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
