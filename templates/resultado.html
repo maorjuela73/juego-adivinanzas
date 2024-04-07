@@ -2,10 +2,12 @@
 <html>
 <head>
     <title>Resultado del Juego</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>¡Felicidades!</h1>
-    <p>Adivinaste el número en {{ intentos }} intentos.</p>
-    <a href="/">Jugar de nuevo</a>
+    <h2>¡Felicidades!</h2>
+    <p>Adivinaste el número en <span class="badge badge-primary">{{ intentos }}</span> intentos.</p>
+    <p>Gracias por jugar. ¡Tu habilidad para adivinar es impresionante!</p>
+    <a href="/" type="button" class="btn btn-primary btn-lg btn-block">Jugar de nuevo</a>
 </body>
 </html>
